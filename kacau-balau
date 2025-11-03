@@ -66,7 +66,7 @@ var codeVersion="f7d8b3d494288b34cb00105ee5d230d68b0ccca7"
     "ratingValue": "5.0",
     "reviewCount": 779
   },
-  "review":
+  "review": [
     {
       "@type": "Review",
       "reviewRating": {
