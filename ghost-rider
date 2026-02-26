@@ -10705,7 +10705,7 @@ window.addEventListener("load", function () {
         snow.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
         snow.style.position = "fixed";
         snow.style.top = "-20px";
-        snow.style.left = Math.random() * window.innerWidth + "px";
+        snow.style.left = Math.random() * window.innerWidth + "px";			
         snow.style.fontSize = (Math.random() * 10 + 12) + "px";
         snow.style.color = "#FFB7C5";
         snow.style.pointerEvents = "none";
